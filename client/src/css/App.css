@@ -1,0 +1,7 @@
+.root-class {
+    height: 700px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: repeat(2, auto);
+}
