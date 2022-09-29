@@ -18,8 +18,6 @@ const io = new Server(server, {
 
 // Listening to incoming socket requests
 io.on("connection", (socket) => {
-  console.log("Connected!" + socket.id);
-
   socket.on("send-message", async (base64Image, room) => {
     const result = await axios.post(url, {
       requests: [
@@ -42,7 +40,6 @@ io.on("connection", (socket) => {
   });
 
   socket.on("join-room", (room) => {
-    console.log(room, "fdsf");
     socket.join(room);
   });
 });

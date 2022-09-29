@@ -17,6 +17,7 @@ const ChatScreen = ({ socket }) => {
   }, [window.location.href]);
 
   useEffect(() => {
+    setChatRoomNumber(window.location.pathname.substring(1));
     socket.emit("join-room", chatRoomNumber);
     socket.on("receive-message", (message) => {
       setMessage(message);
